@@ -1,14 +1,24 @@
-var post_image, post_title, post_made, post_price, post_currency;
+var container = $('#post'),
+post_image, post_title, post_made, post_price, post_currency, post_item;
 
 etsyData.results.forEach(function(x){
 
-  post_title = x.title;
-  console.log(post_title);
-
-  post_image = x.Images.forEach(function(a){
-    a.url_fullxfull;
+  x.Images.forEach(function(a){
+    post_image = '<img src="' + a.url_fullxfull + '">';
   });
 
-  console.log(post_image);
+  post_title = '<h4 class="title">' + x.title + '</h4>';
+
+  post_made = '<span class="whoMade">' + x.Shop.shop_name + '</span>';
+
+  post_currency = '<span class="currency">' + x.currency_code + '</span>';
+
+  post_price = '<span class="price">' + x.price + " " + post_currency + '</span>';
+
+  post_item = '<li>' + post_image + post_title + post_made + post_price + '</li>';
+
+  console.log(post_item);
+
+  container.append(post_item);
 
 });
