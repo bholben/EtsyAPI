@@ -2,29 +2,40 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+//Partials
+@import 'colors';
+@import 'fonts';
 
 // Custom Styles
 
+* {
+  font-size: 12px;
+  font-family: $arial;
+  list-style: none;
+}
 ul, li {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #fafafa;
+  background: $grey;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
 .container {
   @include outer-container;
+  max-width: 960px;
+  padding: 10px;
 }
 
 .sidebar {
   @include span-columns(3);
   min-height: 600px;
-  margin-top: 20px;
-  background-color: grey;
+  background-color: white;
+  border: 1px solid #ececec;
+  border-radius: 3px;
 }
 
 #posts {
@@ -33,34 +44,74 @@ body {
   li {
     @include span-columns(3 of 9);
     @include omega(3n);
-    min-height: 100px;
-    margin-top: 20px;
     padding: 5px;
-    background-color: grey;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    position: relative;
+
+    &:hover {
+      box-shadow: -0.25px 0.25px 4px $darkgrey;
+    }
   }
 
   img {
     width: 100%;
   }
 
-  h4 {
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  .icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    a {
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      background-color: white;
+      margin-left: 5px;
+      border-radius: 2px;
+    }
+
+    .like {
+      background: url("../images/social.png") no-repeat -20px 0;
+    }
+
+    .options {
+      background: url("../images/social.png") no-repeat -120px 0;
+    }
   }
 
-  span.whoMade {
-    width: 50%;
+  a.title {
+    width: 100%;
+    display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: #666;
+  }
+
+  a.whoMade {
+    width: 50%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #b2b2b2;
   }
 
   span.price {
     width: 50%;
+    display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: $green;
+    text-align: right;
+
+    &::before {
+      content: "$";
+    }
   }
 }
