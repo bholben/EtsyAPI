@@ -77,8 +77,44 @@ body {
   }
 
   .price-filter {
-    width: 20px;
-    border-radius: 2px;
+    width: 60px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 3px;
+    text-align: center;
+
+    -webkit-appearance: none;
+    padding: 0;
+    background-color: white;
+    border: 1px solid $grey;
+    border-image-source: none;
+    border-image-slice: none;
+    border-image-width: none;
+    border-image-outset: none;
+    border-image-repeat: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+  }
+
+  .colors {
+
+    li {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      margin: 0 1px 0 0;
+    }
+
+    .red {background-color: HSLA(350, 91%, 50%, 1);}
+    .orange {background-color: HSLA(30, 100%, 50%, 1);}
+    .yellow {background-color: HSLA(50, 91%, 50%, 1);}
+    .green {background-color: HSLA(120, 90%, 40%, 1);}
+    .blue {background-color: HSLA(190, 91%, 50%, 1);}
+    .purple {background-color: HSLA(280, 91%, 50%, 1);}
+    .black {background-color: black;}
+    .white {background-color: white;}
+
   }
 }
 
