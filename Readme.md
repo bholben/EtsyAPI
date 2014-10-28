@@ -1,3 +1,13 @@
-## Yo, I'm a Readme
+## Etsy API Project
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+This was a homework assignment from the Iron Yard to rebuild an Etsy search results page based on their API.
+
+#### Libraries used:
+  * jQuery
+  * Underscore
+  * Modernizr
+
+#### How to use it
+  * Clone my repo
+  * Run `npm install`
+  * Run `bower install`
